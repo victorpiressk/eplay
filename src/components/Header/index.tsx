@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import * as S from './styles'
 import logo from '../../assets/images/logo.svg'
 import iconeCarrinho from '../../assets/images/carrinho.svg'
@@ -11,7 +12,7 @@ const Header = () => {
           <nav>
             <S.Links>
               <S.LinkItem>
-                <a href="#">Categorias</a>
+                <Link to="/categories">Categorias</Link>
               </S.LinkItem>
               <S.LinkItem>
                 <a href="#">Novidades</a>
