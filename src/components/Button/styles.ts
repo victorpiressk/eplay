@@ -13,6 +13,7 @@ export const ButtonContainer = styled.button<Props>`
   color: ${cores.branca};
   font-size: 16px;
   font-weight: bold;
+  cursor: pointer;
 `
 
 export const ButtonLink = styled(Link)`
@@ -23,4 +24,5 @@ export const ButtonLink = styled(Link)`
   color: ${cores.branca};
   font-size: 16px;
   font-weight: bold;
+  cursor: pointer;
 `

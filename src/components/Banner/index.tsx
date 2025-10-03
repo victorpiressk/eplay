@@ -4,15 +4,10 @@ import Tag from '../Tag'
 import { Imagem, Titulo, Precos } from './styles'
 import { Game } from '../../pages/Home'
 import { formataPreco } from '../ProductsList'
+import { useGetFeatureGameQuery } from '../../services/api'
 
 const Banner = () => {
-  const [destaque, setDestaque] = useState<Game>()
-
-  useEffect(() => {
-    fetch('https://ebac-fake-api.vercel.app/api/eplay/destaque')
-      .then((res) => res.json())
-      .then((res) => setDestaque(res))
-  }, [])
+  const { data: destaque, isLoading } = useGetFeatureGameQuery()
 
   if (!destaque) {
     return <h3>Carregando...</h3>

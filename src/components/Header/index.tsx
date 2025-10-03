@@ -1,9 +1,19 @@
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import * as S from './styles'
 import logo from '../../assets/images/logo.svg'
 import iconeCarrinho from '../../assets/images/carrinho.svg'
+import { open } from '../../store/reducers/cart'
+import { RootReducer } from '../../store'
 
 const Header = () => {
+  const dispatch = useDispatch()
+  const { items } = useSelector((state: RootReducer) => state.cart)
+
+  const openCart = () => {
+    dispatch(open())
+  }
+
   return (
     <>
       <S.HeaderBar>
@@ -25,10 +35,10 @@ const Header = () => {
             </S.Links>
           </nav>
         </div>
-        <S.LinkCart href="#">
-          0 - produto(s)
+        <S.CartButton onClick={openCart}>
+          {items.length} - produto(s)
           <img src={iconeCarrinho} alt="Carrinho" />
-        </S.LinkCart>
+        </S.CartButton>
       </S.HeaderBar>
     </>
   )

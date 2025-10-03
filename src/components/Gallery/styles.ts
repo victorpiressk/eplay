@@ -3,6 +3,8 @@ import { cores } from '../../styles'
 
 export const Items = styled.ul`
   display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
 `
 
 export const Action = styled.div`
@@ -20,14 +22,13 @@ export const Action = styled.div`
 `
 
 export const Item = styled.li`
-  margin-right: 16px;
   position: relative;
 
   > img {
     border: 2px solid ${cores.branca};
     border-radius: 8px;
-    width: 150px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
     object-fit: cover;
   }
 
